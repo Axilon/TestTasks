@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: debafebaa354b98479518e2ae731536d
+timeCreated: 1548897968
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - booster_SpeedUp: {fileID: 1980306120896756, guid: 6db71f15642ad644784ebc7da168c56a,
+      type: 2}
+  - booster_SlowDown: {fileID: 1252978774241004, guid: df780f21a3a54584d985a64c1192452a,
+      type: 2}
+  - booster_Increse: {fileID: 1627848762658466, guid: c6acc5161eec9544f85fc564fa97e053,
+      type: 2}
+  - booster_Decrease: {fileID: 1924562354600262, guid: 3d574df8ab87c6541b5c5f085aa93149,
+      type: 2}
+  - booster_Reverse: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
