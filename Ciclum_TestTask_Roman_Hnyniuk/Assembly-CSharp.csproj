@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Coder.cs" />
     <Compile Include="Assets\Scripts\Exceptions\NullKeyValueException.cs" />
     <Compile Include="Assets\Scripts\GameDataFileSaver.cs" />
     <Compile Include="Assets\Scripts\GameDataJsonSaver.cs" />
@@ -75,20 +76,21 @@
     <Compile Include="Assets\Scripts\Interfaces\IIntSavebl.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IStringLoadbl.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IStringSavebl.cs" />
+    <None Include="Assets\StreamingAssets\Data.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/UnityProjects/Fortress Defense/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/UnityProjects/Fortress Defense/TestTasks/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/UnityProjects/Fortress Defense/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/UnityProjects/Fortress Defense/TestTasks/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/UnityProjects/Fortress Defense/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/UnityProjects/Fortress Defense/TestTasks/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/UnityProjects/Fortress Defense/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/UnityProjects/Fortress Defense/TestTasks/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/UnityProjects/Fortress Defense/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>E:/UnityProjects/Fortress Defense/TestTasks/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>E:/Unity2018.3/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -295,13 +297,13 @@
       <HintPath>E:/Unity2018.3/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/UnityProjects/Fortress Defense/Ciclum_TestTask_Roman_Hnyniuk/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>E:/UnityProjects/Fortress Defense/TestTasks/Ciclum_TestTask_Roman_Hnyniuk/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/UnityProjects/Fortress Defense/Ciclum_TestTask_Roman_Hnyniuk/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>E:/UnityProjects/Fortress Defense/TestTasks/Ciclum_TestTask_Roman_Hnyniuk/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/UnityProjects/Fortress Defense/Ciclum_TestTask_Roman_Hnyniuk/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>E:/UnityProjects/Fortress Defense/TestTasks/Ciclum_TestTask_Roman_Hnyniuk/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>E:/Unity2018.3/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

@@ -40,7 +40,7 @@ namespace DataSaver
             }
             else
             {
-                if(bool.TryParse(stringValue,out bool result))
+                if(!bool.TryParse(stringValue,out bool result))
                 {
                     throw new InvalidCastException();
                 }

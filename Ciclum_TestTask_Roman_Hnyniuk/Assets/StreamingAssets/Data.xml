@@ -1,0 +1,9 @@
+<GameData>
+  <String1 value="Some text" />
+  <String2 value="Changed text" />
+  <String3 value="Some text" />
+  <bool1 value="False" />
+  <bool2 value="True" />
+  <int1 value="10" />
+  <float value="1002,4" />
+</GameData>

@@ -18,6 +18,11 @@ namespace DataSaver
                 File.Create(folderPath + fileName);
             }
             LoadData();
+            SaveBool("222", false);
+            SaveString("str", "net");
+            SaveInt("int", 100);
+            SaveFloat("float",1115.22f);
+            SaveData();
         }
         public override void SaveString(string key, string value)
         {
@@ -137,12 +142,15 @@ namespace DataSaver
                 throw new NullKeyValueException(key);
             }
         }
-
+        public override void SaveData()
+        {
+            SaveToFile();
+        }
         private void WriteToFile(string type, string key, string value)
         {
             using (StreamWriter fileWriter = new StreamWriter(folderPath + fileName, true))
             {
-                fileWriter.WriteLine(type + separetor + key+ separetor + value);
+                fileWriter.WriteLine(Coder.Encode(type + separetor + key+ separetor + value));
             }
         }
         private void LoadData()
@@ -152,28 +160,29 @@ namespace DataSaver
             {
                 while ((line = fileReader.ReadLine()) != null)
                 {
-                    AddToDictionary(line);
+                    AddToDictionary(Coder.Decode(line));
                 }
             }
         }
         
-        public override void SaveData()
+        private void SaveToFile()
         {
+
             File.WriteAllText(folderPath + fileName, "");
             string type = "";
             string key = "";
             string value = "";
-            foreach(KeyValuePair<string, object> keyValue in gameData)
+            foreach (KeyValuePair<string, object> keyValue in gameData)
             {
                 key = keyValue.Key;
                 value = keyValue.Value.ToString();
                 type = keyValue.Value.GetType().Name;
-                WriteToFile(type,key,value);
+                WriteToFile(type, key, value);
             }
-
         }
         private void AddToDictionary(string lineText)
         {
+            Debug.Log(lineText);
             string[] splitedText = lineText.Split(separetor);
             string type = splitedText[0];
             string key = splitedText[1];
@@ -194,5 +203,6 @@ namespace DataSaver
                     break;
             }
         }
+        
     }
 }

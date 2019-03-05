@@ -14,6 +14,7 @@ namespace DataSaver
 
         private void Awake()
         {
+            DontDestroyOnLoad(this);
             switch (gameData)
             {
                 case (GameData.NONE)://Using Player Prefs by default
@@ -26,13 +27,12 @@ namespace DataSaver
                     data = new GameDataFileSaver();
                     break;
                 case (GameData.XML):
-                    //data = new GameDataPlayerPrefsSaver();
+                    data = new GameDataXMLSaver();
                     break;
                 case (GameData.JSON):
                     //data = new GameDataPlayerPrefsSaver();
                     break;
             }
-            DontDestroyOnLoad(this);
 
         }
         /*public override void SaveString(string key, string value)
