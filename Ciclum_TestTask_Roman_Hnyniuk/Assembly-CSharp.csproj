@@ -63,19 +63,13 @@
     <Compile Include="Assets\Scripts\Coder.cs" />
     <Compile Include="Assets\Scripts\Exceptions\NullKeyValueException.cs" />
     <Compile Include="Assets\Scripts\GameDataFileSaver.cs" />
-    <Compile Include="Assets\Scripts\GameDataJsonSaver.cs" />
     <Compile Include="Assets\Scripts\GameDataManager.cs" />
     <Compile Include="Assets\Scripts\GameDataPlayerPrefsSaver.cs" />
     <Compile Include="Assets\Scripts\GameDataSaver.cs" />
     <Compile Include="Assets\Scripts\GameDataXMLSaver.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IBoolLoadbl.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IBoolSavebl.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IFloatLoadbl.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IFloatSavabl.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IIntLoadbl.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IIntSavebl.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IStringLoadbl.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IStringSavebl.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IDataSavebl.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IPrimitiveLoadbl.cs" />
+    <Compile Include="Assets\Scripts\Interfaces\IPrimitiveSavebl.cs" />
     <None Include="Assets\StreamingAssets\Data.xml" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/UnityProjects/Fortress Defense/TestTasks/Ciclum_TestTask_Roman_Hnyniuk/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

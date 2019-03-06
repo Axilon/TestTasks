@@ -12,29 +12,14 @@ namespace DataSaver
         {
             if (!File.Exists(folderPath + fileName))
             {
-                //File.Create(folderPath + fileName);
                 XmlDocument xmlDoc = new XmlDocument();
                 XmlNode rootNode = xmlDoc.CreateElement("GameData");
                 xmlDoc.AppendChild(rootNode);
                 xmlDoc.Save(folderPath + fileName);
             }
-            SaveString("String1", "Some text");
-            SaveString("String2", "Some text");
-            SaveString("String3", "Some text");
-            SaveString("String2", "Changed text");
-            Debug.Log(LoadString("String3"));
-            SaveBool("bool1", true);
-            Debug.Log("bool1" + LoadBool("bool1"));
-            SaveBool("bool2", true);
-            SaveBool("bool1", false);
-            Debug.Log("bool1" + LoadBool("bool1"));
-            SaveInt("int1", 100);
-            SaveFloat("float", 1002.4f);
-            Debug.Log("int1" + LoadInt("int1"));
-            SaveInt("int1", 10);
-            Debug.Log("float" + LoadFloat("float"));
 
         }
+        #region Save Values Region
         public override void SaveString(string key, string value)
         {
             AddValueToFile(key, value);
@@ -51,8 +36,9 @@ namespace DataSaver
         {
             AddValueToFile(key, value.ToString());
         }
+        #endregion
 
-
+        #region Load Values Region
         public override string LoadString(string key)
         {
             return GetValueFromFile(key);
@@ -82,17 +68,8 @@ namespace DataSaver
             }
             return value;
         }
-        //-------------------------------------------------------------------------------------------------------------------------
-        public override void SaveData()
-        {
-            throw new System.NotImplementedException();
-        }
-        
-        private void SaveXml(XmlDocument xmlDoc)
-        {
-            xmlDoc.Save(folderPath+fileName);
-        }
-        //-------------------------------------------------------------------------------------------------------------------------
+        #endregion
+
         private string GetValueFromFile(string key)
         {
             string result = string.Empty;
@@ -101,6 +78,7 @@ namespace DataSaver
             {
                 if (xmlReader.IsStartElement(key)){
                     result = xmlReader.GetAttribute("value");
+                    break;
                 }
             }
             if (result == string.Empty)

@@ -15,136 +15,104 @@ namespace DataSaver
             gameData = new Dictionary<string, object>();
             if (!File.Exists(folderPath+fileName))
             {
-                File.Create(folderPath + fileName);
+                FileStream fs = File.Create(folderPath + fileName);
+                fs.Close();
             }
             LoadData();
-            SaveBool("222", false);
-            SaveString("str", "net");
-            SaveInt("int", 100);
-            SaveFloat("float",1115.22f);
-            SaveData();
         }
+        
+        #region Save Values Region
         public override void SaveString(string key, string value)
         {
-            if (gameData.ContainsKey(key))
-            {
-                gameData[key] = value;
-            }
-            else
-            {
-                gameData.Add(key, value);
-            }
+            PutValueToDictionary(key, value);
         }
         public override void SaveBool(string key, bool value)
         {
-            if (gameData.ContainsKey(key))
-            {
-                gameData[key] = value;
-            }
-            else
-            {
-                gameData.Add(key, value);
-            }
+            PutValueToDictionary(key, value);
         }
         public override void SaveInt(string key, int value)
         {
-            if (gameData.ContainsKey(key))
-            {
-                gameData[key] = value;
-            }
-            else
-            {
-                gameData.Add(key, value);
-            }
+            PutValueToDictionary(key, value);
         }
         public override void SaveFloat(string key, float value)
         {
-            if (gameData.ContainsKey(key))
-            {
-                gameData[key] = value;
-            }
-            else
-            {
-                gameData.Add(key, value);
-            }
+            PutValueToDictionary(key, value);
         }
-
+        #endregion
+        
+        #region Load Values Region
         public override string LoadString(string key)
         {
-            if (gameData.ContainsKey(key))
+            try
             {
-                try
-                {
-                    return (string)gameData[key];
-                }
-                catch (InvalidCastException)
-                {
-                    throw new InvalidCastException();
-                }
+                return (string)GetValueFromDictionary(key);
             }
-            else
+            catch (InvalidCastException)
             {
-                throw new NullKeyValueException(key);
+                throw new InvalidCastException();
             }
         }
         public override bool LoadBool(string key)
         {
-            if (gameData.ContainsKey(key))
+            try
             {
-                try
-                {
-                    return (bool)gameData[key];
-                }
-                catch (InvalidCastException)
-                {
-                    throw new InvalidCastException();
-                }
+                return (bool)GetValueFromDictionary(key);
             }
-            else
+            catch (InvalidCastException)
             {
-                throw new NullKeyValueException(key);
+                throw new InvalidCastException();
             }
 
         }
         public override int LoadInt(string key)
         {
-            if (gameData.ContainsKey(key))
+            try
             {
-                try
-                {
-                    return (int)gameData[key];
-                }
-                catch (InvalidCastException)
-                {
-                    throw new InvalidCastException();
-                }
+                return (int)GetValueFromDictionary(key);
             }
-            else
+            catch (InvalidCastException)
             {
-                throw new NullKeyValueException(key);
+                throw new InvalidCastException();
             }
         }
         public override float LoadFloat(string key)
         {
+            try
+            {
+                return (float)GetValueFromDictionary(key);
+            }
+            catch (InvalidCastException)
+            {
+                throw new InvalidCastException();
+            }
+        }
+        #endregion
+
+        public override void SaveData()
+        {
+            SaveToFile();
+        }
+        private void PutValueToDictionary(string key, object value)
+        {
             if (gameData.ContainsKey(key))
             {
-                try
-                {
-                    return (float)gameData[key];
-                }
-                catch (InvalidCastException)
-                {
-                    throw new InvalidCastException();
-                }
+                gameData[key] = value;
+            }
+            else
+            {
+                gameData.Add(key, value);
+            }
+        }
+        private object GetValueFromDictionary(string key)
+        {
+            if (gameData.ContainsKey(key))
+            {
+                return gameData[key];
             }
             else
             {
                 throw new NullKeyValueException(key);
             }
-        }
-        public override void SaveData()
-        {
-            SaveToFile();
         }
         private void WriteToFile(string type, string key, string value)
         {
@@ -167,7 +135,6 @@ namespace DataSaver
         
         private void SaveToFile()
         {
-
             File.WriteAllText(folderPath + fileName, "");
             string type = "";
             string key = "";

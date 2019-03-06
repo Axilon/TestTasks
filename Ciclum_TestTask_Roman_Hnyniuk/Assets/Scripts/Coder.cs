@@ -5,7 +5,6 @@ namespace DataSaver
 {
     public static class Coder
     {
-        private static string secretKet = "ciklum";
         private static byte[] key = new byte[8] { 1, 3, 7, 9, 12, 77, 99, 88 };
         private static byte[] iv = new byte[8] { 12, 23, 75, 39, 112, 27, 9, 38 };
 

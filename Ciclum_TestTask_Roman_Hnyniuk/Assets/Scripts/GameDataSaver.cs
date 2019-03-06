@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-namespace DataSaver
+﻿namespace DataSaver
 {
-    public abstract class GameDataSaver : IStringSavebl, IBoolSavebl, IIntSavebl, IFloatSavabl, IStringLoadbl, IBoolLoadbl, IIntLoadbl, IFloatLoadbl
+    public abstract class GameDataSaver : IPrimitiveSavebl, IPrimitiveLoadbl
     {
         public abstract void SaveString(string key, string value);
         public abstract void SaveBool(string key, bool value);
@@ -14,7 +11,7 @@ namespace DataSaver
         public abstract bool LoadBool(string key);
         public abstract int LoadInt(string key);
         public abstract float LoadFloat(string key);
-        
-        public abstract void SaveData(); 
+
+        public virtual void SaveData() { }
     }
 }
